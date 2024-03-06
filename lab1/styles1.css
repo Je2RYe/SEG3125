@@ -1,0 +1,84 @@
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #ffdfa4;
+  }
+  
+.container {
+  margin: 50px auto;
+  padding: 20px;
+  background-color: #faede2;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+}
+
+h1 {
+  text-align: center;
+  font-family: 'Trebuchet MS';
+}
+
+.Last{
+  margin-top: 20px;
+}
+
+.First{
+  margin-top: 10px;
+}
+
+img {
+ width: 100%;
+}
+.question{
+  margin: 15px;
+  padding-left: 10px;
+}
+
+label {
+  font-weight: bold;
+}
+
+.choices{
+  font-size:smaller;
+}
+textarea{
+  min-width: 500px;
+}
+
+button {
+  background-color: #ff7f35;
+  color: white;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.text{
+margin-top: 10px;
+}
+
+button:hover {
+  background-color: #45a049;
+}
+
+.signature {
+  text-align: center;
+  margin-top: 30px;
+  color: #777;
+}
+hr{
+  width:100%
+}
+form{
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+ 
+}
+
+.upper_container{
+  display: flex;
+  flex-direction: column;
+  align-self: center;
+  max-width: 80%;
+}

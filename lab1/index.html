@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="styles1.css">
+  <!--Added Favicon-->
+  <link rel="icon" type="image/x-icon" href="../lab1/images/Favicon.ico">
+  <title>Website UI Evaluation Survey</title>
+</head>
+<body>
+
+  <div class="container">
+    <h1>Website Experiencing Survey</h1>
+    <hr>
+    <p style="text-align: center; font-style: italic;">Help us improve by sharing your thoughts on <a href="https://www.uottawa.ca/en" target="_blank">uOttawa</a>'s main page.</p>
+    <div class="upper_container">
+      <div class="web_info">
+        <a href="https://www.uottawa.ca/en" target="_blank"><img src="../lab1/images/uottawa_front_page.jpg" alt="Website_Page"></a>
+      </div>
+  
+      <form action="#" method="post" class="survey-form">
+        <div class="question">
+          <label id="personal_info">Personal information</label>
+          <div class = "First">First name:<input type="text" name="first_name"></div>
+          <div class = "Last">Last name:<input type="text" name="last_name"></div>
+        </div>
+
+        <div class="question">
+          <label>What grade are you in:</label>
+          <select id="singleChoice1" name="singleChoice1" required>
+            <option value="Option A">1st</option>
+            <option value="Option B">2nd</option>
+            <option value="Option C">3rd</option>
+            <option value="Option D">4th</option>
+            <option value="Option E">5th or More</option>
+          </select>
+        </div>
+  
+        <div class="question">
+          <label>1. Which features do you use often? (You can choose more than one answer)</label>
+          <div class="choices"><input type="checkbox" id="check1" name="selection[]" value="Option 1">
+          <label for="check1">uoZone</label>
+          <input type="checkbox" id="check2" name="selection[]" value="Option 2">
+          <label for="check2">Brightspace</label>
+          <input type="checkbox" id="check3" name="selection[]" value="Option 3">
+          <label for="check3">VirtuO</label>
+          </div>
+        </div>
+  
+        <div class="question">
+          <label>2. How likely are you to recommend this website to others?</label>
+          <div class="choices"><input type="radio" id="option1" name="singleChoice2" value="Option 1" required>
+          <label for="option1">Certainly</label>
+          <input type="radio" id="option2" name="singleChoice2" value="Option 2" required>
+          <label for="option2">Probably</label>
+          <input type="radio" id="option3" name="singleChoice2" value="Option 3" required>
+          <label for="option3">Never</label></div>
+        </div>
+  
+        <div class="question">
+          <label>3. How would you rate the overall user experience?</label>
+          <div class="choices"><input type="radio" id="option1" name="singleChoice3" value="Option 1" required>
+          <label for="option1">Good</label>
+          <input type="radio" id="option2" name="singleChoice3" value="Option 2" required>
+          <label for="option2">Average</label>
+          <input type="radio" id="option3" name="singleChoice3" value="Option 3" required>
+          <label for="option3">Bad</label>
+          </div>
+        </div>
+  
+        <div class = "question">
+          <label>4. What role in the university are you?</label>
+          <div class = choices><input type="radio" id="option1" name="singleChoice4" value="option 1" required>
+          <label for="option1">Current student</label>
+          <input type="radio" id="option2" name="singleChoice4" value="Option2" required>
+          <label for="option2">Alumni</label>
+          <input type="radio" id="option3" name="singleChoice4" value="Option3" required>
+          <label for="option3">Faculty/Staff</label>
+          </div>
+        </div>
+  
+        <div class = "question">
+          <label>5.Which part of the website do you use most often?</label>
+          <div class = "choices"><input type="checkbox" id="check1" name="selection[]" value="Option 1">
+          <label for="check1">study</label>
+          <input type="checkbox" id="check2" name="selection[]" value="Option 2">
+          <label for="check2">Campus life</label>
+          <input type="checkbox" id="check3" name="selection[]" value="Option 3">
+          <label for="check3">Reaseach and innovation</label>
+          <input type="checkbox" id="check4" name="selection[]" value="Option4">
+          <label for="check4">About us</label>
+          </div> 
+        </div>
+  
+        <div class="question">
+          <label id="comments">6. Any additional comments or suggestions about the website? :</label>
+          <div class = "text"><textarea id="comments" name="comments" rows="4"></textarea></div>
+          <div id="submit"><button type="submit">Submit Survey</button></div>
+        </div>
+  
+      </form>
+    </div>
+    
+    <footer class="signature">Website designed by Group 29: Yichen Ye, RuiHeng Tan and Junjie Lin </footer>
+    
+  </div>
+
+</body>
+</html>

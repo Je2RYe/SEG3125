@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html>
+<!-- Breadcrumb, Round Range Slider,Slideshow is taken from  https://www.w3schools.com -->
+<head>
+    <!-- This style sheet is taken from  https://www.w3schools.com/howto/howto_js_tabs.asp -->
+    <link href="styles/style.css" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+  <!-- Tab links, each one with an onclick event associated with it -->
+  <h1 class="title">
+      <img src="./images/title.png" id="titleimg">
+  </h1>
+  <!-- Breadcrumb -->
+  <ul class="breadcrumb">
+    <li><a href="./index.html">Home</a></li>
+    <li id="breadcrumb-page">Current page</li>
+  </ul>
+  <div class="slideshow-container">
+
+    <div class="mySlides fade">
+      <div class="numbertext">1 / 3</div>
+      <img src="./images/pasta.jpg" style="width:100%">
+      
+    </div>
+    
+    <div class="mySlides fade">
+      <div class="numbertext">2 / 3</div>
+      <img src="./images/chicken.jpg" style="width:100%">
+      
+    </div>
+    
+    <div class="mySlides fade">
+      <div class="numbertext">3 / 3</div>
+      <img src="./images/carrot.jpg" style="width:100%">
+    </div>
+    <div class="toptext">Hot sale!</div>
+    <a class="prev" onclick="plusSlides(-1)">❮</a>
+    <a class="next" onclick="plusSlides(1)">❯</a>
+    
+    </div>
+    <br>
+    
+    <div style="text-align:center">
+      <span class="dot" onclick="currentSlide(1)"></span> 
+      <span class="dot" onclick="currentSlide(2)"></span> 
+      <span class="dot" onclick="currentSlide(3)"></span> 
+    </div>
+  <div class="content">
+      <div class="tab">
+          <button id="customerButton" class="tablinks" onclick="openInfo(event, 'Client')">
+              <div class="tabtext">Customer</div>
+          </button>
+          <button id="productsButton" class="tablinks" onclick="openInfo(event, 'Products')">
+              <div class="tabtext">Products</div>
+          </button>
+          <button id="cartButton" class="tablinks" onclick="openInfo(event, 'Cart')">
+              <div class="tabtext">Cart</div>
+          </button>
+      </div>
+
+      <div id="Client" class="tabcontent">
+          <h3>Customer Information</h3>
+          <hr>
+          <p><em>Tell us a bit about you.</em></p>
+          Choose a Category:
+          <!-- Update the onchange attribute of each checkbox -->
+          <input type="checkbox" id="vegetarianCheckbox" name="diet" value="Vegetarian"
+              onchange="handleCheckboxChange()">
+          <label>Vegetarian</label>
+
+          <input type="checkbox" id="glutenFreeCheckbox" name="diet" value="GlutenFree"
+              onchange="handleCheckboxChange()">
+          <label>Gluten Intolerant</label>
+
+          <input type="checkbox" id="organicCheckbox" name="diet" value="Organic" onchange="handleCheckboxChange()">
+          <label>Organic lifestyle follower</label>
+
+          <input type="checkbox" id="nonOrganicCheckbox" name="diet" value="Non-organic"
+              onchange="handleCheckboxChange()">
+          <label>Non-Organic lifestyle follower</label>
+
+      </div>
+
+      <div id="Products" class="tabcontent">
+          <h3>Your targeted products</h3>
+          <hr>
+          <p><em>We preselected products based on your preferences.</em></p>
+          <strong>Choose items to buy:</strong>
+          <div class="slidecontainer">
+            <input type="range" min="1" max="50" value="50" class="slider" id="myRange">
+            <p>Price range: 0 to <span id="maxrange"></span>$</p>
+          </div>
+          
+          <div id="displayProduct"></div>
+          <button id="addCart" type="button" class="block" onclick="selectedItems()">
+              Add selected items to cart.
+          </button>
+      </div>
+
+      <div id="Cart" class="tabcontent">
+          <h3>Cart</h3>
+          <hr>
+          <p><em>Here are the items in your cart.</em></p>
+          <div id="displayCart" class="display"></div>
+      </div>
+  </div>
+
+
+  <script src="scripts/groceries.js"></script>
+  <script src="scripts/main.js"></script>
+  <script>
+    let slideIndex = 1;
+    showSlides(slideIndex);
+
+    function plusSlides(n) {
+    showSlides(slideIndex += n);
+    }
+
+    function currentSlide(n) {
+    showSlides(slideIndex = n);
+    }
+
+    function showSlides(n) {
+    let i;
+    let slides = document.getElementsByClassName("mySlides");
+    let dots = document.getElementsByClassName("dot");
+    if (n > slides.length) {slideIndex = 1}    
+    if (n < 1) {slideIndex = slides.length}
+    for (i = 0; i < slides.length; i++) {
+        slides[i].style.display = "none";  
+    }
+    for (i = 0; i < dots.length; i++) {
+        dots[i].className = dots[i].className.replace(" active", "");
+    }
+    slides[slideIndex-1].style.display = "block";  
+    dots[slideIndex-1].className += " active";
+    }
+        // Function to update breadcrumb based on sidebar clicks
+        function updateBreadcrumb(page) {
+            document.getElementById("breadcrumb-page").innerText = page;
+        }
+
+        // Add event listeners to sidebar buttons
+        document.getElementById("customerButton").addEventListener("click", function () {
+            updateBreadcrumb("Customer");
+        });
+
+        document.getElementById("productsButton").addEventListener("click", function () {
+            updateBreadcrumb("Products");
+        });
+
+        document.getElementById("cartButton").addEventListener("click", function () {
+            updateBreadcrumb("Cart");
+        });
+    </script>
+    <script>
+        document.getElementById("myRange").addEventListener("input", function() {
+            var selectedCheckboxes = updateselected();
+            populateListProductChoices(selectedCheckboxes, 'displayProduct');
+            document.getElementById("maxrange").innerText = this.value;
+        });
+    
+    </script>
+</body>
+
+<footer class="signature">Website designed by Group 29: Yichen Ye, RuiHeng Tan, and Junjie Lin </footer>
+
+</html>
