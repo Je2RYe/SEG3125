@@ -1,0 +1,54 @@
+.panda-movie-details-container {
+    margin-top: -40px;
+    margin-left: 0%;
+    color: white;
+    padding: 120px;
+  }
+  
+  .details-header {
+    margin-bottom: 15px;
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .details-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-right: auto; 
+  }
+  
+  .movie-image {
+    height: 270px;
+  }
+  
+  .movie-details {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 10px;
+  }
+  
+  .movie-details div {
+    flex: 1;
+  }
+  
+  .movie-synopsis {
+    margin-top: 10px;
+    
+  }
+  
+  .leave-comment-button {
+    margin-top: 5px;
+    margin-bottom: 10px;
+  }
+  
+.centered-player-container {
+    background-color: black;
+    margin-top: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 390px; 
+    
+  }
+  
